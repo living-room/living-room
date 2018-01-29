@@ -4,3 +4,7 @@
 [submodule "room-client"]
 	path = room-client
 	url = https://github.com/jedahan/room-client.git
+[submodule "roomdb"]
+	path = roomdb
+	url = https://github.com/alexwarth/roomdb.git
+	branch = modularify
