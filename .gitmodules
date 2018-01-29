@@ -1,0 +1,6 @@
+[submodule "room-server"]
+	path = room-server
+	url = https://github.com/jedahan/room-server.git
+[submodule "room-client"]
+	path = room-client
+	url = https://github.com/jedahan/room-client.git
