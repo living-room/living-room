@@ -1,8 +1,10 @@
-# living room, or making the recurse center space programmable
+# living room, a programmable space @ recurse center
 
 We are making Lovelace, a room inside Recurse Center, programmable. To get started playing around with the same ideas that exist there, checkout [room-client](https://github.com/jedahan/room-client).
 
-For helping out please see [our github issues](https://github.com/jedahan/research/issues). We have tagged issues with broad tracks of development: **persistence** - making the system run and deploy as painless as possible
+For helping out please see [our github issues](https://github.com/jedahan/research/issues). We have tagged issues with broad tracks of development:
+
+**persistence** - making the system run and deploy as painless as possible
 
 **onramping** - providing a clear entry point for anyone who wants to play in this space
 
