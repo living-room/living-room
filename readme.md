@@ -4,13 +4,13 @@ We are making Lovelace, a room inside Recurse Center, programmable. To get start
 
 For helping out please see [our github issues](https://github.com/jedahan/research/issues). We have tagged issues with broad tracks of development:
 
-**persistence** - making the system run and deploy as painless as possible
+**[persisting][]** - making the system run and deploy as painless as possible
 
-**onramping** - providing a clear entry point for anyone who wants to play in this space
+**[involving][]** - providing a clear entry point for anyone who wants to play in this space
 
-**playing** - writing new sensors, toys, and tools within a space, and
+**[playing][]** - writing new sensors, toys, and tools within a space, and
 
-**exploring** - trying out projects, reading papers, watching talks, researching work that could help inform the future of the project.
+**[exploring][]** - trying out projects, reading papers, watching talks, researching work that could help inform the future of the project.
 
 ## development philosophy
 
@@ -53,3 +53,9 @@ If an implementation has no link, it means we would like to support it but haven
 - realtalk
 - roomdb
 - datalog
+
+
+[involving]: https://github.com/jedahan/research/issues?q=is%3Aopen+is%3Aissue+label%3Ainvolving/
+[persisting]: https://github.com/jedahan/research/issues?q=is%3Aopen+is%3Aissue+label%3Apersisting/
+[playing]: https://github.com/jedahan/research/issues?q=is%3Aopen+is%3Aissue+label%3Aplaying/
+[exploring]: https://github.com/jedahan/research/issues?q=is%3Aopen+is%3Aissue+label%3Aexploring/
