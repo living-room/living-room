@@ -5,7 +5,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/bash -l -c "echo 'sleep 2 && xrandr --output HDMI-1 --same-as HDMI-0 && firefox -f --url http://localhost:5000' > ~/.xinitrc; startx"
+ExecStart=/bin/bash -l -c "echo 'sleep 2 && xrandr --output HDMI-1 --same-as HDMI-0 && xset dpms 0 0 0 && xset s off -dpms && firefox -f --url http://localhost:5000' > ~/.xinitrc; startx"
 WorkingDirectory=/home/room
 Restart=on-failure
 
