@@ -1,10 +1,9 @@
-[submodule "room-server"]
-	path = room-server
-	url = https://github.com/jedahan/room-server.git
-[submodule "room-client"]
-	path = room-client
-	url = https://github.com/jedahan/room-client.git
-[submodule "roomdb"]
-	path = roomdb
-	url = https://github.com/alexwarth/roomdb.git
-	branch = modularify
+[submodule "living-room-js"]
+	path = living-room-js
+	url = https://github.com/jedahan/living-room-js
+[submodule "living-room-server"]
+	path = living-room-server
+	url = https://github.com/jedahan/living-room-server
+[submodule "living-room-database"]
+	path = living-room-database
+	url = https://github.com/jedahan/living-room-database

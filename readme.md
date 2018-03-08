@@ -1,8 +1,11 @@
 # living room, a programmable space @ recurse center
 
-We are making Lovelace, a room inside Recurse Center, programmable. To get started playing around with the same ideas that exist there, checkout [room-client](https://github.com/jedahan/room-client). For more context, check out our [research blog](https://livingroomresearch.tumblr.com/).
+We are making Lovelace, a room inside Recurse Center, programmable. To get started playing around with the same ideas that exist there, checkout [living-room-js][]
+For more context, check out our [research blog](https://livingroomresearch.tumblr.com/).
 
-For helping out please see [our github issues](https://github.com/jedahan/research/issues). We have tagged issues with broad tracks of development:
+## helping out
+
+For helping out please see [our github issues](https://github.com/jedahan/living-room/issues). We have tagged issues with broad tracks of development:
 
 **[persisting][]** - making the system run and deploy as painless as possible
 
@@ -43,19 +46,21 @@ Writing the philosophy is to help provide context about decisions made, not to b
 
 If an implementation has no link, it means we would like to support it but haven't written anything yet!
 
-* languages: **[javascript](https://github.com/jedahan/roomjs)**, c
-* protocols: **[http](https://github.com/jedahan/room-http)**, stdin/stdout, websockets, osc
-* platforms: **[browser](https://github.com/modernserf/rumor-visualizer)**, **[node.js](https://github.com/jedahan/roomjs)**, arduino, openFrameworks, Cinder
-
+* languages: **[javascript client][living-room-js]**, c
+* protocols: **[http, osc, and socketio server][living-room-server]**
+* platforms: **[browser & node.js client][living-room-js]**, arduino, openFrameworks, clojure
+* visualizers: **[subscription vis](https://github.com/modernserf/rumor-visualizer)**
 
 ## inspirations
 
 - realtalk
 - roomdb
 - datalog
+- linda
 
-
-[involving]: https://github.com/jedahan/research/issues?q=is%3Aopen+is%3Aissue+label%3Ainvolving/
-[persisting]: https://github.com/jedahan/research/issues?q=is%3Aopen+is%3Aissue+label%3Apersisting/
-[playing]: https://github.com/jedahan/research/issues?q=is%3Aopen+is%3Aissue+label%3Aplaying/
-[exploring]: https://github.com/jedahan/research/issues?q=is%3Aopen+is%3Aissue+label%3Aexploring/
+[living-room-server]: https://github.com/jedahan/living-room-server
+[living-room-js]: https://github.com/jedahan/living-room-js
+[involving]: https://github.com/jedahan/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Ainvolving/
+[persisting]: https://github.com/jedahan/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Apersisting/
+[playing]: https://github.com/jedahan/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Aplaying/
+[exploring]: https://github.com/jedahan/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Aexploring/
