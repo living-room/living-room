@@ -55,9 +55,21 @@ You might see a bunch of strings like "#Simba is a cat at (0.5, 0.5)" and "#Elno
 
 Lets say we want a list of animal types, we can use pattern matching with the `$` symbol:
 
+```bash
+yarn select '#$name is a $animal at ($x, $y)'
 ```
-yarn select '#$name is a $type at ($x, $y)'
+
+This is neat, but we want to do something with the browser and maybe make it more performant. The client library has support for subscriptions! See the html in **[examples/]()** for more information, but the general gist is:
+
+```javascript
+room
+  .subscribe(`$name is a $animal at ($x, $y)`)
+  .on(response => {
+    console.log(response.solutions)
+  })
 ```
+
+This will run whatever callback is passed to `on()` every time there are new solutions to the original subscription.
 
 ## helping out
 
