@@ -3,6 +3,62 @@
 We are making Lovelace, a room inside Recurse Center, programmable. To get started playing around with the same ideas that exist there, checkout [living-room-js][]
 For more context, check out our [research blog](https://livingroomresearch.tumblr.com/).
 
+## I have a sensor / some information, how do I share it?
+
+Let's say you have a program that print to stdout, this section will show how to get that information into the room, and make sure its there.
+
+
+### Install and test the codebase
+
+** First, install and run the local test code **
+
+```bash
+git clone --recursive https://github.com/jedahan/living-room.git
+cd living-room-js
+yarn
+yarn test
+```
+
+This should copy `http://localhost:5000` to your clipboard. Navigate to `http://localhost:5000` in your browser. You are seeing the index.html file in the living-room-js/examples folder. If everything is working, you should see **Timon**, **Pumba**, and **Simba**. If not, please [file an issue](https://github.com/jedahan/living-room-js/issues/new). To see other examples, do e.g. `http://localhost:5000/particles`. 
+
+** Next, assert some new facts with the commandline client **
+
+```bash
+yarn assert '#beepo is a friend at (0.3, 0.25)'
+```
+
+The visualization should now show a fourth label, beepo
+
+** Now connect your sensor **
+
+For example, if your sensor writes one fact per line, you can use `xargs` like so:
+
+```bash
+node examples/sensor.js | xargs -I {} yarn assert {}
+```
+
+This should start randomly adding some more animals to the canvas
+
+## interacting with the crosby room-database
+
+If you look in the examples/index.html file, it is expecting that you are running the room-server locally (this is the relevant line in index.html: `<script src="http://localhost:3000/socket.io/socket.io.js" ></script>`). If you want to point to the room-server running on the crosby machine, change this to `<script src="http://crosby.cluster.recurse.com:3000/socket.io/socket.io.js" ></script>`. You will also need to change the room constructor to `const room = new window.room('http://crosby.cluster.recurse.com:3000')`.
+
+## I want to make a visualization for the room
+
+First, we'll want to see what the room has heard (this assumes `yarn test` is running locally):
+
+```bash
+curl http://localhost:3000/facts
+```
+
+You might see a bunch of strings like "#Simba is a cat at (0.5, 0.5)" and "#Elnora is a Xiphosura at (0.0676, 0.8081)".
+
+Lets say we want a list of animal types, we can use pattern matching with the `$` symbol:
+
+```
+yarn select '#$name is a $type at ($x, $y)'
+```
+
 ## helping out
 
 For helping out please see [our github issues](https://github.com/jedahan/living-room/issues). We have tagged issues with broad tracks of development:
