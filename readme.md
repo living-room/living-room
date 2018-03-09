@@ -30,7 +30,7 @@ yarn
 yarn test
 ```
 
-This should copy `http://localhost:5000` to your clipboard. Navigate to `http://localhost:5000` in your browser. You are seeing the index.html file in the living-room-js/examples folder. If everything is working, you should see **Timon**, **Pumba**, and **Simba**. If not, please [file an issue](https://github.com/jedahan/living-room-js/issues/new). To see other examples, do e.g. `http://localhost:5000/particles`.
+This should copy [http://localhost:5000][] to your clipboard. Navigate there, and if everything is working, **Timon**, **Pumba**, and **Simba** will just be chilling in your browser. If not, please [file an issue](https://github.com/jedahan/living-room-js/issues/new). To see other examples, do e.g. `http://localhost:5000/particles`.
 
 ## Next, assert some new facts with the commandline client **
 
