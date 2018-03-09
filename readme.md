@@ -6,7 +6,7 @@ For more context, check out our [research blog](https://livingroomresearch.tumbl
 # table of contents
 - [I have a sensor / some information, how do I share it?](#i-have-a-sensor---some-information--how-do-i-share-it-)
   * [Install and test the codebase](#install-and-test-the-codebase)
-  * [Next, assert some new facts with the commandline client **](#next--assert-some-new-facts-with-the-commandline-client---)
+  * [Next, assert some new facts with the commandline client](#next--assert-some-new-facts-with-the-commandline-client---)
 - [I want to make a visualization for the room](#i-want-to-make-a-visualization-for-the-room)
 - [interacting with the crosby room-database](#interacting-with-the-crosby-room-database)
 - [helping out](#helping-out)
