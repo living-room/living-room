@@ -3,14 +3,12 @@
 We are making Lovelace, a room inside Recurse Center, programmable. To get started playing around with the same ideas that exist there, checkout [living-room-js][]
 For more context, check out our [research blog](https://livingroomresearch.tumblr.com/).
 
-## I have a sensor / some information, how do I share it?
+# I have a sensor / some information, how do I share it?
 
 Let's say you have a program that print to stdout, this section will show how to get that information into the room, and make sure its there.
 
 
-### Install and test the codebase
-
-** First, install and run the local test code **
+## Install and test the codebase
 
 ```bash
 git clone --recursive https://github.com/jedahan/living-room.git
@@ -19,9 +17,9 @@ yarn
 yarn test
 ```
 
-This should copy `http://localhost:5000` to your clipboard. Navigate to `http://localhost:5000` in your browser. You are seeing the index.html file in the living-room-js/examples folder. If everything is working, you should see **Timon**, **Pumba**, and **Simba**. If not, please [file an issue](https://github.com/jedahan/living-room-js/issues/new). To see other examples, do e.g. `http://localhost:5000/particles`. 
+This should copy `http://localhost:5000` to your clipboard. Navigate to `http://localhost:5000` in your browser. You are seeing the index.html file in the living-room-js/examples folder. If everything is working, you should see **Timon**, **Pumba**, and **Simba**. If not, please [file an issue](https://github.com/jedahan/living-room-js/issues/new). To see other examples, do e.g. `http://localhost:5000/particles`.
 
-** Next, assert some new facts with the commandline client **
+## Next, assert some new facts with the commandline client **
 
 ```bash
 yarn assert '#beepo is a friend at (0.3, 0.25)'
@@ -39,11 +37,8 @@ node examples/sensor.js | xargs -I {} yarn assert {}
 
 This should start randomly adding some more animals to the canvas
 
-## interacting with the crosby room-database
 
-If you look in the examples/index.html file, it is expecting that you are running the room-server locally (this is the relevant line in index.html: `<script src="http://localhost:3000/socket.io/socket.io.js" ></script>`). If you want to point to the room-server running on the crosby machine, change this to `<script src="http://crosby.cluster.recurse.com:3000/socket.io/socket.io.js" ></script>`. You will also need to change the room constructor to `const room = new window.room('http://crosby.cluster.recurse.com:3000')`.
-
-## I want to make a visualization for the room
+# I want to make a visualization for the room
 
 First, we'll want to see what the room has heard (this assumes `yarn test` is running locally):
 
@@ -71,7 +66,11 @@ room
 
 This will run whatever callback is passed to `on()` every time there are new solutions to the original subscription.
 
-## helping out
+# interacting with the crosby room-database
+
+If you look in the examples/index.html file, it is expecting that you are running the room-server locally (this is the relevant line in index.html: `<script src="http://localhost:3000/socket.io/socket.io.js" ></script>`). If you want to point to the room-server running on the crosby machine, change this to `<script src="http://crosby.cluster.recurse.com:3000/socket.io/socket.io.js" ></script>`. You will also need to change the room constructor to `const room = new window.room('http://crosby.cluster.recurse.com:3000')`.
+
+# helping out
 
 For helping out please see [our github issues](https://github.com/jedahan/living-room/issues). We have tagged issues with broad tracks of development:
 
@@ -83,7 +82,7 @@ For helping out please see [our github issues](https://github.com/jedahan/living
 
 **[exploring][]** - trying out projects, reading papers, watching talks, researching work that could help inform the future of the project.
 
-## development philosophy
+# development philosophy
 
 Writing the philosophy is to help provide context about decisions made, not to be a set of rules that must be followed. Everything about it can be changed, and we welcome feelings, opinions, and discussion.
 
@@ -110,7 +109,7 @@ Writing the philosophy is to help provide context about decisions made, not to b
 **when implementing protocol/platform support, native is better than consistent**
 > for example, using osc channels (`/assert 'today is a beautiful day'`) interoperates with osc libraries better than `/room {assert: {facts: ['today is a beautiful day']}}`, since they don't require json support.
 
-## implementations
+# implementations
 
 If an implementation has no link, it means we would like to support it but haven't written anything yet!
 
@@ -119,7 +118,7 @@ If an implementation has no link, it means we would like to support it but haven
 * platforms: **[browser & node.js client][living-room-js]**, arduino, openFrameworks, clojure
 * visualizers: **[subscription vis](https://github.com/modernserf/rumor-visualizer)**
 
-## inspirations
+# inspirations
 
 - realtalk
 - roomdb
