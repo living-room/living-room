@@ -7,3 +7,6 @@
 [submodule "living-room-database"]
 	path = living-room-database
 	url = https://github.com/jedahan/living-room-database
+[submodule "living-room-sensors"]
+	path = living-room-sensors
+	url = git@github.com:jedahan/living-room-sensors
