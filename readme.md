@@ -3,19 +3,6 @@
 We are making Lovelace, a room inside Recurse Center, programmable. To get started playing around with the same ideas that exist there, checkout [living-room-js][]
 For more context, check out our [research blog](https://livingroomresearch.tumblr.com/).
 
-# table of contents
-- [I have a sensor / some information, how do I share it?](#i-have-a-sensor---some-information--how-do-i-share-it-)
-  * [Install and test the codebase](#install-and-test-the-codebase)
-  * [Next, assert some new facts with the commandline client](#next--assert-some-new-facts-with-the-commandline-client---)
-- [I want to make a visualization for the room](#i-want-to-make-a-visualization-for-the-room)
-- [interacting with the crosby room-database](#interacting-with-the-crosby-room-database)
-- [helping out](#helping-out)
-- [development philosophy](#development-philosophy)
-- [implementations](#implementations)
-- [inspirations](#inspirations)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 # I have a sensor / some information, how do I share it?
 
 Let's say you have some information you'd like to share with the server. This section will show how to get messages into the room via [living-room-js](https://github.com/jedahan/living-room-js)
@@ -26,10 +13,10 @@ Let's say you have some information you'd like to share with the server. This se
 git clone --recursive https://github.com/jedahan/living-room.git
 cd living-room/living-room-js
 npm install
-npm test
+npm run dev
 ```
 
-This should copy [http://localhost:5000]() to your clipboard. Navigate there, and if everything is working, **Timon**, **Pumba**, and **Simba** will just be chilling in your browser. If not, please [file an issue](https://github.com/jedahan/living-room-js/issues/new).
+This should copy [http://localhost:5000]() to your clipboard. Navigate to *[http://localhost:5000/animals]()*, and if everything is working, **Timon**, **Pumba**, and **Simba** will just be chilling in your browser. If not, please [file an issue](https://github.com/jedahan/living-room-js/issues/new).
 
 2. Assert a new fact with the commandline client
 
