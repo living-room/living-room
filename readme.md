@@ -5,7 +5,7 @@ For more context, check out our [research blog](https://livingroomresearch.tumbl
 
 # I have a sensor / some information, how do I share it?
 
-Let's say you have some information you'd like to share with the server. This section will show how to get messages into the room via [living-room-js](https://github.com/jedahan/living-room-js)
+Let's say you have some information you'd like to share with the server. This section will show how to get messages into the room via [living-room-js][]
 
 1. Install this codebase
 
