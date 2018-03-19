@@ -13,7 +13,7 @@ Let's say you have some information you'd like to share with the server. This se
 git clone --recursive https://github.com/jedahan/living-room.git
 cd living-room/living-room-js
 npm install
-npm run dev
+npm start
 ```
 
 This should copy [http://localhost:5000]() to your clipboard. Navigate to *[http://localhost:5000/animals]()*, and if everything is working, **Timon**, **Pumba**, and **Simba** will just be chilling in your browser. If not, please [file an issue](https://github.com/jedahan/living-room-js/issues/new).
