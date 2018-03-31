@@ -3,75 +3,7 @@
 We are making Lovelace, a room inside Recurse Center, programmable. To get started playing around with the same ideas that exist there, checkout [living-room-js][]
 For more context, check out our [research blog](https://livingroomresearch.tumblr.com/).
 
-# I have a sensor / some information, how do I share it?
-
-Let's say you have some information you'd like to share with the server. This section will show how to get messages into the room via [living-room-js][]
-
-1. Install this codebase
-
-```bash
-git clone --recursive https://github.com/jedahan/living-room.git
-cd living-room/living-room-js
-npm install
-npm start
-```
-
-This should copy [http://localhost:5000]() to your clipboard. Navigate to *[http://localhost:5000/animals]()*, and if everything is working, **Timon**, **Pumba**, and **Simba** will just be chilling in your browser. If not, please [file an issue](https://github.com/jedahan/living-room-js/issues/new).
-
-2. Assert a new fact with the commandline client
-
-```bash
-npm run assert 'beepo is a friend at (0.3, 0.25)'
-```
-
-The visualization should now show a fourth label, beepo
-
-3. Build your sensor
-
-A sensor is what we call anything that just asserts facts. We have created an example sensor that just spits out facts to stdout:
-
-```bash
-node examples/sensor.js
-```
-
-4. Connect the sensor
-
-In this case, we are gonna use xargs and the [example commandline](./examples/commandline.js) to turn them into living-room-server compatable http requests:
-
-```bash
-node examples/sensor.js | xargs -I {} npm run assert {}
-```
-
-This should start randomly adding some more animals to the canvas
-
-
-# I want to make a visualization for the room
-
-First, we'll want to see what the room has heard (this assumes there is a server running locally via `npm run test`)
-
-```bash
-curl http://localhost:3000/facts
-```
-
-You might see a bunch of strings like "Simba is a cat at (0.5, 0.5)" and "Elnora is a Xiphosura at (0.0676, 0.8081)".
-
-Lets say we want a list of animal types, we can use pattern matching with the `$` symbol:
-
-```bash
-npm run select '$name is a $animal at ($x, $y)'
-```
-
-This is neat, but we want to do something with the browser and maybe make it more performant. The client library has support for subscriptions! See the html in **[examples/]()** for more information, but the general gist is:
-
-```javascript
-room
-  .subscribe(`$name is a $animal at ($x, $y)`)
-  .on(response => {
-    console.log(response.solutions)
-  })
-```
-
-This will run whatever callback is passed to `on()` every time there are new solutions to the original subscription.
+Itching to get started?
 
 # interacting with lovelace
 
