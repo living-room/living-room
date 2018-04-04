@@ -5,6 +5,8 @@ For more context, check out our [research blog](https://livingroomresearch.tumbl
 
 Itching to get started?
 
+![Diagram of submodules in living-room](/docs/images/living-room.png)
+
 # interacting with lovelace
 
 The official room-server to be used @ RC is running on crosby, a cluster computer that is currently in lovelace. We will now point our commandline and web clients to that computer so you can start interacting with all the cool sensors and visualizers.
