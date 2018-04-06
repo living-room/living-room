@@ -13,7 +13,7 @@ The official room-server to be used @ RC is running on crosby, a cluster compute
 
 If you look in the [examples/index.html](examples/index.html) file, it is expecting that you are running the room-server locally (this is the relevant line in index.html: `<script src="http://localhost:3000/socket.io/socket.io.js" ></script>`). If you want to point to the room-server running on the crosby machine, change this to `<script src="http://crosby.cluster.recurse.com:3000/socket.io/socket.io.js" ></script>`. You will also need to change the room constructor to `const room = new window.room('http://crosby.cluster.recurse.com:3000')`.
 
-To use the commandline you will need to `export LIVING_ROOM_URI=http://crosby.cluster.recurse.com:3000`.
+To use the commandline you will need to `export LIVING_ROOM_HOST=http://crosby.cluster.recurse.com:3000`.
 
 # next steps
 
