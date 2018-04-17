@@ -1,8 +1,10 @@
+### **New to the living room? check out [the introduction](https://github.com/jedahan/living-room/wiki)**
+
+---
+
 # living room, a programmable space @ recurse center
 
 We are making Lovelace, a room inside Recurse Center, programmable. 
-
-**New to the living room? check out [the introduction](https://github.com/jedahan/living-room/wiki)**
 
 To get started playing around with the same ideas that exist there, checkout [living-room-js][]
 For more context, check out our [research blog](https://livingroomresearch.tumblr.com/).
