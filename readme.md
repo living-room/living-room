@@ -1,34 +1,100 @@
-### **New to the living room? check out [the introduction](https://github.com/jedahan/living-room/wiki)**
+# living room
 
----
+Living Room is a programmable space at Recurse Center. Think of it as a protocol that can be used to create collaborative games, experiments in physical computing, magical real-world data visualizations and just about anything else you can think of.[^1]
 
-# living room, a programmable space @ recurse center
+[^1]: At any given moment, Living Room’s coherence is defined only by the communication and collaboration of the people who are programming the space.
 
-We are making Lovelace, a room inside Recurse Center, programmable. 
+To start hacking the room, there are just two concepts to understand: *FACTS* and *PROCESSES*.
 
-To get started playing around with the same ideas that exist there, checkout [living-room-js][]
-For more context, check out our [research blog](https://livingroomresearch.tumblr.com/).
+## FACTS
 
-Itching to get started?
+Let’s talk about facts first.  At the center of our universe is a [database][] of strings.  We call these strings facts.  A fact can be any length and it can contain any information that you’d like.  A fact is basically just a sentence.  It’s a collection of words intended to express an idea.
 
-![Diagram of submodules in living-room](/docs/images/living-room.png)
+Anyone can add a fact to the database.  When you add a fact to the database, we call that an ASSERTION.
 
-# interacting with lovelace
+Anyone can also delete any fact from the database.  When you delete a fact from the database, we call that a RETRACTION.
 
-The official room-server to be used @ RC is running on crosby, a cluster computer that is currently in lovelace. We will now point our commandline and web clients to that computer so you can start interacting with all the cool sensors and visualizers.
+What’s more, anyone is allowed to search for a fact in the database.  When you search the database for a fact, we call that a SELECT.
 
-If you look in the [examples/index.html](examples/index.html) file, it is expecting that you are running the room-server locally (this is the relevant line in index.html: `<script src="http://localhost:3000/socket.io/socket.io.js" ></script>`). If you want to point to the room-server running on the crosby machine, change this to `<script src="http://crosby.cluster.recurse.com:3000/socket.io/socket.io.js" ></script>`. You will also need to change the room constructor to `const room = new window.room('http://crosby.cluster.recurse.com:3000')`.
+Here are some example assertions:
 
-To use the commandline you will need to `export LIVING_ROOM_HOST=http://crosby.cluster.recurse.com:3000`.
+```js
+assert(‘noah is a person at recurse center’)
+assert(‘whiskers is a cat at (0.51, 0.40)’)
+assert(‘socks is a cat at (0.72, 0.11)’)
+assert(‘there is a mouse at (0.20, 0.85)’)
+assert(‘whiskers is hungry’)
+```
 
-# next steps
+Maybe you’re wondering:  What are those numbers in parentheses, like (0.51, 0.40)?  Good question.  They’re normalized screen coordinates, because facts often describe something that we’d like to output to a projected screen in the room.
 
-* Try getting a friend together, and making a game!
-* ...more to come
+Here are some example retractions:
 
-# helping out
+```js
+retract(‘noah is a person at recurse center’)
+retract(‘whiskers is a cat at (0.51, 0.40)’)
+retract(‘socks is a cat at (0.72, 0.11)’)
+retract(‘there is a mouse at (0.20, 0.85)’)
+retract(‘whiskers is hungry’)
+```
 
-For helping out please see [our github issues](https://github.com/jedahan/living-room/issues). We have tagged issues with broad tracks of development:
+Performing a select is just a bit more complicated.  Selecting on a string will return all facts in the database that match it, like so:
+
+```js
+select(‘noah is a person at recurse center’)
+```
+
+But you can also use variables to match on any word at a given position in a fact and bind the resultant values in the return object:
+
+```js
+select(‘$personName is a person at recurse center’) // might return { personName: "noah" }
+select(‘$animalName is a $animalType at ($x, $y)’)  // might return { animalName: "whiskers", animalType: "cat", x: 0.51, y: 0.40 }
+select(‘$who is hungry’)                            // might return { who: "whiskers" }
+```
+
+And there’s one more tool at your disposal:  The wildcard. Like a variable, the wildcard will match on any word at a given position, but it will not bind the word’s value in the return object.  To insert a wildcard, just use the $ symbol:
+
+```js
+select(‘$ is a $ at $’)
+select(‘$ is a $animalType at ($, $)’)
+select(‘$ is $feeling’)
+```
+
+So that’s FACTS.
+
+Now let’s move on to the other half of our universe:
+
+## PROCESSES
+
+Processes are programs that consume facts and do things with them.  Processes often perform some small transformation on a fact, or control some behavior of an element in a fact, or use information contained within a fact to do something cool.  Consider the following hypothetical processes:
+
+- at-recursecenter.js is a process that continuously searches the database for people who are at Recurse Center, and upon learning that a new person has arrived at Recurse Center, loudly welcomes them using speech synthesis.
+
+- mouse-process.js is a process that continuously searches the database for mouse animals and moves them a random distance from their previous screen coordinates.
+
+- hungry-cat-process.js is a process that continuously searches the database for cat animals who are hungry, and moves them toward the location of any known mouse animals in the database.
+
+- cat-and-mouse-process.js is a process that continuously searches the database for cat and mouse animals that are located at normalized screen coordinates, and draws them to an HTML canvas, which we project onto the wall.
+
+# getting involved
+
+There are a few more things to understand, but the best way to learn is to come hack with us!  Here are just a few ways that you can get involved:
+
+- Write a process that contributes logic to a group game
+- Work on infrastructure optimizations
+- Get a friend together, to make a game!
+- Become a networked sensor and assert the output of your RC project to our database
+- Think of cool things to do with the space
+- Read and contribute to our [research blog](https://livingroomresearch.tumblr.com/) which has more context
+
+If you are interested in hacking *right now* feel free to `git clone http://github.com/living-room/client-js` and follow the readme there.
+
+Also we would love to chat and pair so just tap on @**Jonathan Dahan (S'14)**, @**Noah Levenson (SP1'18)**, or @**Ana Malagon (SP1'18)**'s shoulders. A good time to start hacking is 12:30pm every friday in Lovelace, where we go over [the state of the room](https://www.recurse.com/calendar/2005) - introducing it to new people, and going over the work. This week we will have a [game jam](https://www.recurse.com/calendar/2223) just after the state of the room.
+
+
+## helping out
+
+For helping out please see [our github issues](https://github.com/living-room/living-room/issues). We have tagged issues with broad tracks of development:
 
 **[persisting][]** - making the system run and deploy as painless as possible
 
@@ -69,9 +135,9 @@ Writing the philosophy is to help provide context about decisions made, not to b
 
 If an implementation has no link, it means we would like to support it but haven't written anything yet!
 
-* languages: **[javascript client][living-room-js]**, c
-* protocols: **[http, osc, and socketio server][living-room-server]**
-* platforms: **[browser & node.js client][living-room-js]**, arduino, openFrameworks, clojure
+* languages: **[javascript client][client-js]**, c
+* protocols: **[http, osc, and socketio service][service-js]**
+* platforms: **[browser & node.js client][client-js]**, arduino, openFrameworks, clojure
 * visualizers: **[subscription vis](https://github.com/modernserf/rumor-visualizer)**
 
 # inspirations
@@ -82,8 +148,10 @@ If an implementation has no link, it means we would like to support it but haven
 - linda
 
 [living-room-server]: https://github.com/jedahan/living-room-server
-[living-room-js]: https://github.com/jedahan/living-room-js
-[involving]: https://github.com/jedahan/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Ainvolving/
-[persisting]: https://github.com/jedahan/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Apersisting/
-[playing]: https://github.com/jedahan/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Aplaying/
-[exploring]: https://github.com/jedahan/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Aexploring/
+[client-js]: https://github.com/living-room/client-js
+[database-js]: https://github.com/living-room/database-js
+
+[involving]: https://github.com/living-room/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Ainvolving/
+[persisting]: https://github.com/living-room/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Apersisting/
+[playing]: https://github.com/living-room/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Aplaying/
+[exploring]: https://github.com/living-room/living-room/issues?q=is%3Aopen+is%3Aissue+label%3Aexploring/
