@@ -19,50 +19,50 @@ What’s more, anyone is allowed to search for a fact in the database.  When you
 Here are some example assertions:
 
 ```js
-assert(‘noah is a person at recurse center’)
-assert(‘whiskers is a cat at (0.51, 0.40)’)
-assert(‘socks is a cat at (0.72, 0.11)’)
-assert(‘there is a mouse at (0.20, 0.85)’)
-assert(‘whiskers is hungry’)
+assert('noah is a person at recurse center')
+assert('whiskers is a cat at (0.51, 0.40)')
+assert('socks is a cat at (0.72, 0.11)')
+assert('there is a mouse at (0.20, 0.85)')
+assert('whiskers is hungry')
 ```
 
-Maybe you’re wondering:  What are those numbers in parentheses, like (0.51, 0.40)?  Good question.  They’re normalized screen coordinates, because facts often describe something that we’d like to output to a projected screen in the room.
+Maybe you're wondering:  What are those numbers in parentheses, like (0.51, 0.40)?  Good question.  They're normalized screen coordinates, because facts often describe something that we'd like to output to a projected screen in the room.
 
 Here are some example retractions:
 
 ```js
-retract(‘noah is a person at recurse center’)
-retract(‘whiskers is a cat at (0.51, 0.40)’)
-retract(‘socks is a cat at (0.72, 0.11)’)
-retract(‘there is a mouse at (0.20, 0.85)’)
-retract(‘whiskers is hungry’)
+retract('noah is a person at recurse center')
+retract('whiskers is a cat at (0.51, 0.40)')
+retract('socks is a cat at (0.72, 0.11)')
+retract('there is a mouse at (0.20, 0.85)')
+retract('whiskers is hungry')
 ```
 
 Performing a select is just a bit more complicated.  Selecting on a string will return all facts in the database that match it, like so:
 
 ```js
-select(‘noah is a person at recurse center’)
+select('noah is a person at recurse center')
 ```
 
 But you can also use variables to match on any word at a given position in a fact and bind the resultant values in the return object:
 
 ```js
-select(‘$personName is a person at recurse center’) // might return { personName: "noah" }
-select(‘$animalName is a $animalType at ($x, $y)’)  // might return { animalName: "whiskers", animalType: "cat", x: 0.51, y: 0.40 }
-select(‘$who is hungry’)                            // might return { who: "whiskers" }
+select('$personName is a person at recurse center') // might return { personName: "noah" }
+select('$animalName is a $animalType at ($x, $y)')  // might return { animalName: "whiskers", animalType: "cat", x: 0.51, y: 0.40 }
+select('$who is hungry')                            // might return { who: "whiskers" }
 ```
 
-And there’s one more tool at your disposal:  The wildcard. Like a variable, the wildcard will match on any word at a given position, but it will not bind the word’s value in the return object.  To insert a wildcard, just use the $ symbol:
+And there's one more tool at your disposal:  The wildcard. Like a variable, the wildcard will match on any word at a given position, but it will not bind the word's value in the return object.  To insert a wildcard, just use the $ symbol:
 
 ```js
-select(‘$ is a $ at $’)
-select(‘$ is a $animalType at ($, $)’)
-select(‘$ is $feeling’)
+select('$ is a $ at $')
+select('$ is a $animalType at ($, $)')
+select('$ is $feeling')
 ```
 
-So that’s FACTS.
+So that's FACTS.
 
-Now let’s move on to the other half of our universe:
+Now let's move on to the other half of our universe:
 
 ## PROCESSES
 
