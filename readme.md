@@ -147,7 +147,7 @@ If an implementation has no link, it means we would like to support it but haven
 - datalog
 - linda
 
-[living-room-server]: https://github.com/jedahan/living-room-server
+[service-js]: https://github.com/living-room/service-js
 [client-js]: https://github.com/living-room/client-js
 [database-js]: https://github.com/living-room/database-js
 
