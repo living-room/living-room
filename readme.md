@@ -1,14 +1,14 @@
 # living room
 
-Living Room is a programmable space at Recurse Center. Think of it as a protocol that can be used to create collaborative games, experiments in physical computing, magical real-world data visualizations and just about anything else you can think of.[^1]
+Living Room is a programmable space at Recurse Center. Think of it as a protocol that can be used to create collaborative games, experiments in physical computing, magical real-world data visualizations and just about anything else you can think of.
 
-[^1]: At any given moment, Living Room’s coherence is defined only by the communication and collaboration of the people who are programming the space.
+> At any given moment, Living Room’s coherence is defined only by the communication and collaboration of the people who are programming the space.
 
 To start hacking the room, there are just two concepts to understand: *FACTS* and *PROCESSES*.
 
 ## FACTS
 
-Let’s talk about facts first.  At the center of our universe is a [database][] of strings.  We call these strings facts.  A fact can be any length and it can contain any information that you’d like.  A fact is basically just a sentence.  It’s a collection of words intended to express an idea.
+Let’s talk about facts first.  At the center of our universe is a [database][database-js] of strings.  We call these strings facts.  A fact can be any length and it can contain any information that you’d like.  A fact is basically just a sentence.  It’s a collection of words intended to express an idea.
 
 Anyone can add a fact to the database.  When you add a fact to the database, we call that an ASSERTION.
 
