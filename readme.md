@@ -146,6 +146,7 @@ If an implementation has no link, it means we would like to support it but haven
 - roomdb
 - datalog
 - linda
+- [vpri](http://www.vpri.org)
 
 [service-js]: https://github.com/living-room/service-js
 [client-js]: https://github.com/living-room/client-js
