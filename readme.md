@@ -89,8 +89,7 @@ There are a few more things to understand, but the best way to learn is to come 
 
 If you are interested in hacking *right now* feel free to `git clone http://github.com/living-room/client-js` and follow the readme there.
 
-Also we would love to chat and pair so just tap on @**Jonathan Dahan (S'14)**, @**Noah Levenson (SP1'18)**, or @**Ana Malagon (SP1'18)**'s shoulders. A good time to start hacking is 12:30pm every friday in Lovelace, where we go over [the state of the room](https://www.recurse.com/calendar/2005) - introducing it to new people, and going over the work. This week we will have a [game jam](https://www.recurse.com/calendar/2223) just after the state of the room.
-
+Also we would love to chat and pair so just tap on @**Jonathan Dahan (S'14)**, @**Noah Levenson (SP1'18)**, or @**Ana Malagon (SP1'18)**'s shoulders. A good time to start hacking is 12:30pm every friday in Lovelace, where we go over [the state of the room](https://www.recurse.com/calendar/2005) - introducing it to new people, and going over the work.
 
 ## helping out
 
